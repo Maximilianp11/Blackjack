@@ -1,0 +1,20 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("images/table.png");
+    font-weight: bold;
+}
+
+h1 {
+    color: goldenrod;
+}
+
+* {
+    text-align: center;
+}
+
+.btn {
+    background-color: goldenrod;
+    border-radius: 15%;
+    width: 150px;
+    margin: auto
+}
