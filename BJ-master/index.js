@@ -12,6 +12,14 @@ sumEl = document.getElementById("sum-el");
 cardsEl = document.getElementById("cards-el");
 wins = 0;
 losses =0;
+if (localStorage.Wins) {
+    localStorage.setItem("Wins")
+    localStorage.setItem("Losses")
+} else {
+    localStorage.setItem("Wins", 0)
+    localStorage.setItem("Losses", 0)   
+}
+
 
 function renderGame() {
     cardsEl.innerHTML = "Cards: "
@@ -32,15 +40,15 @@ function renderGame() {
         } else if (sum == 21) {
             message = "Wohoo! You've got Blackjack! "; //🥳
             hasBlackjack = true;
-            wins++;
+            localStorage.Wins++
         } else {
             message = "You're out of the game! "; //😭
             isAlive = false;
-            losses++;
+            localStorage.Losses++
         }
         messageEl.innerHTML = message
-        document.getElementById("wins").innerHTML = "Wins: " + wins
-        document.getElementById("losses").innerHTML = "Losses: " + losses
+        document.getElementById("wins").innerHTML = "Wins: " + localStorage.Wins
+        document.getElementById("losses").innerHTML = "Losses: " + localStorage.Losses
     }
 
 
